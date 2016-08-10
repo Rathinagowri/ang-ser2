@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" ng-app="app" ng-controller="EmpController as empCtrl">
+<head>
+	<meta charset="utf-8" />
+	<title>Example of Angular Constant</title>
+</head>
+<body>
+Employee Name:
+<div ng-bind="empCtrl.name"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+<script>
+(function() {
+angular.module('app',[])
+	.controller('EmpController', ['EmpConstant', function(EmpConstant) {
+		this.name = EmpConstant;
+	}])
+	.constant('EmpConstant', 'Ram');
+})();
+</script>
+</body>
+</html>
